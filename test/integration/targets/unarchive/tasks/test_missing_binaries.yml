@@ -79,9 +79,3 @@
       loop:
         - zip
         - tar
-
-    - name: Reinstall zip binaries
-      package:
-        name:
-          - zip
-          - unzip
