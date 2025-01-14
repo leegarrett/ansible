@@ -1378,11 +1378,11 @@ class User(object):
                         # HOME_MODE has higher precedence as UMASK
                         match = re.match(r'^HOME_MODE\s+(\d+)$', line)
                         if match:
-                            mode = int(m.group(1), 8)
+                            mode = int(match.group(1), 8)
                             break  # higher precedence
                         match = re.match(r'^UMASK\s+(\d+)$', line)
                         if match:
-                            umask = int(m.group(1), 8)
+                            umask = int(match.group(1), 8)
                             mode = 0o777 & ~umask
                 try:
                     os.chmod(path, mode)
