@@ -1390,7 +1390,7 @@ class User(object):
                 try:
                     os.chmod(path, mode)
                 except OSError as e:
-                    self.module.exit_json(failed=True, msg="%s" % to_native(e))
+                    self.module.exit_json(failed=True, msg=to_native(e))
 
     def chown_homedir(self, uid, gid, path):
         try:
